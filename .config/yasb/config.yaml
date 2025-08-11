@@ -32,7 +32,7 @@ bars:
             bottom: 4
             right: 4
         widgets:
-            left: ["komorebi_workspaces", "active_window"]
+            left: ["komorebi_workspaces", "active_window", "apps"]
             center: ["timeWeather_grouper"]
             right: ["systray", "media", "tools_grouper"]
 widgets:
@@ -69,7 +69,6 @@ widgets:
         type: "yasb.active_window.ActiveWindowWidget"
         options:
             label: "{win[title]}"
-            label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
             label_no_window: ""
             label_icon: true
             label_icon_size: 16
@@ -92,6 +91,33 @@ widgets:
             callbacks:
                 on_left: "toggle_calendar"
                 on_right: "toggle_label"
+    apps:
+        type: "yasb.applications.ApplicationsWidget"
+        options:
+            container_padding:
+                top: 0
+                left: 8
+                bottom: 0
+                right: 8
+            label: "{data}"
+            image_icon_size: 20
+            app_list:
+                - {
+                      icon: "C:\\Users\\ADITYA\\.config\\yasb\\icons\\zen.svg",
+                      launch: "C:\\Program Files\\Zen Browser\\zen.exe",
+                  }
+                - {
+                      icon: "C:\\Users\\ADITYA\\.config\\yasb\\icons\\vscode.svg",
+                      launch: "D:\\Microsoft VS Code\\Code.exe",
+                  }
+                - {
+                      icon: "C:\\Users\\ADITYA\\.config\\yasb\\icons\\powershell.ico",
+                      launch: "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+                  }
+                - {
+                      icon: "C:\\Users\\ADITYA\\.config\\yasb\\icons\\obsidian.svg",
+                      launch: "D:\\Softwares\\Obsidian\\Obsidian.exe",
+                  }
     taskbar:
         type: "yasb.taskbar.TaskbarWidget"
         options:
@@ -293,7 +319,8 @@ widgets:
         type: "yasb.grouper.GrouperWidget"
         options:
             class_name: "grouped-widgets"
-            widgets: ["volume", "bluetooth","notifications", "home", "power_menu"]
+            widgets:
+                ["volume", "bluetooth", "notifications", "home", "power_menu"]
             container_padding:
                 top: 0
                 left: 2

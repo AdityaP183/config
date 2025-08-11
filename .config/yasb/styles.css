@@ -278,7 +278,7 @@
     background-color: var(--crust)
 }
 .volume-widget .icon {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--green);
 }
 .language-widget .icon {
@@ -552,5 +552,9 @@
     color: var(--text);
 }
 .bluetooth-widget .icon {
-    color: var(--text);
+    color: skyblue;
+    font-size: 16px;
+}
+.apps-widget .widget-container .label {
+    padding: 0 5px;
 }
