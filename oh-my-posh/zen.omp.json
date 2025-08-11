@@ -1,0 +1,130 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"blocks": [
+		{
+			"alignment": "left",
+			"type": "prompt",
+			"segments": [
+				{
+					"foreground": "#45F1C2",
+					"style": "plain",
+					"template": "\u256d\u2500 \ueb99 {{ .UserName }}",
+					"type": "session"
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"foreground": "#fff",
+					"template": " on "
+				},
+				{
+					"properties": {
+						"cache_duration": "none",
+						"folder_icon": "\uf07c ",
+						"home_icon": " \uf015 ",
+						"style": "folder"
+					},
+					"template": "\uf07b {{ .Path }} ",
+					"powerline_symbol": "\ue0b0",
+					"foreground": "#38bdf8",
+					"type": "path",
+					"style": "plain"
+				},
+				{
+					"properties": {
+						"cache_duration": "none",
+						"fetch_package_manager": true,
+						"npm_icon": "<#cc3a3a>\ue71e</> ",
+						"yarn_icon": "<#348cba>\ue6a7</> "
+					},
+					"template": "<#fff>via</> \udb80\udf99 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+					"foreground": "#4ade80",
+					"type": "node",
+					"style": "plain"
+				},
+				{
+					"type": "go",
+					"style": "plain",
+					"template": "<#fff>via</> \ue626 {{ .Full }}",
+					"foreground": "#22d3ee"
+				},
+				{
+					"type": "python",
+					"style": "plain",
+					"template": "<#fff>via</#> \ue73c {{ .Full }}",
+					"foreground": "#a3e635",
+					"properties": {
+						"extensions": [
+							"*.py",
+							"*.ipynb",
+							"pyproject.toml",
+							"venv.bak"
+						]
+					}
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "right",
+			"segments": [
+				{
+					"properties": {
+						"branch_icon": "\ue725 ",
+						"cache_duration": "none",
+						"fetch_stash_count": true,
+						"fetch_status": true,
+						"fetch_upstream_icon": true,
+						"fetch_worktree_count": true
+					},
+					"template": "( {{ url .UpstreamIcon .UpstreamURL }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} )",
+					"foreground": "#addb67",
+					"type": "git",
+					"style": "plain"
+				},
+				{
+					"type": "executiontime",
+					"style": "plain",
+					"foreground": "#fdba74",
+					"template": "[\ue384 {{ .FormattedMs }}]",
+					"properties": {
+						"threshold": 500,
+						"style": "austin",
+						"always_enabled": true
+					}
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"segments": [
+				{
+					"properties": {
+						"cache_duration": "none"
+					},
+					"template": "\u2570\u2500",
+					"foreground": "#45F1C2",
+					"type": "text",
+					"style": "plain"
+				},
+				{
+					"properties": {
+						"always_enabled": true,
+						"cache_duration": "none"
+					},
+					"template": "\ue285\ueab6",
+					"foreground": "#45F1C2",
+					"type": "status",
+					"style": "plain",
+					"foreground_templates": [
+						"{{ if gt .Code 0 }}#ef5350{{ end }}"
+					]
+				}
+			],
+			"newline": true
+		}
+	],
+	"version": 3,
+	"final_space": true
+}

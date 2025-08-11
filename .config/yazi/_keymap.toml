@@ -1,0 +1,31 @@
+[manager]
+keymap = [
+  # quiting processes
+  { on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selection, or cancel search" },
+  { on = "q", run = "quit", desc = "Quit the process" },
+
+  # movement
+  { on = "<Up>", run = "arrow prev", desc = "Previous file" },
+  { on = "<Down>", run = "arrow next", desc = "Next file" },
+  { on = "<Left>", run = "leave", desc = "Back to the parent directory" },
+  { on = "<Right>", run = "enter", desc = "Enter the child directory" },
+  { on = [
+    "g",
+    "g",
+  ], run = "arrow top", desc = "Go to top" },
+  { on = "G", run = "arrow bot", desc = "Go to bottom" },
+
+  # Selection of file
+  { on = "<Space>", run = [
+    "toggle",
+    "arrow next",
+  ], desc = "Toggle the current selection state" },
+  { on = "<C-a>", run = "toggle_all --state=on", desc = "Select all files" },
+  { on = "<C-r>", run = "toggle_all", desc = "Invert selection of all files" },
+
+  # Visual mode
+  { on = "v", run = "visual_mode", desc = "Enter visual mode (selection mode)" },
+  { on = "V", run = "visual_mode --unset", desc = "Enter visual mode (unset mode)" },
+
+
+]
