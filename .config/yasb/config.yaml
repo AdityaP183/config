@@ -28,9 +28,9 @@ bars:
             height: 35
         padding:
             top: 5
-            left: 8
-            bottom: 2
-            right: 8
+            left: 6
+            bottom: 3
+            right: 6
         widgets:
             left: ["komorebi_workspaces", "active_window", "apps"]
             center: ["timeWeather_grouper"]
@@ -78,16 +78,19 @@ widgets:
     clock:
         type: "yasb.clock.ClockWidget"
         options:
-            label: "{%a %b %d %H:%M}"
+            label: "{%a, %b %d %H:%M}"
             label_alt: "{%A, %d %B %Y %H:%M}"
             timezones: []
             calendar:
                 blur: true
                 round_corners: true
                 round_corners_type: "normal"
-                border_color: "None"
+                border_color: "system"
                 alignment: "center"
                 direction: "down"
+                show_holidays: true
+                country_code: "IN"
+                holiday_color: "#D96F32"
             callbacks:
                 on_left: "toggle_calendar"
                 on_right: "toggle_label"
@@ -144,8 +147,8 @@ widgets:
         type: "yasb.systray.SystrayWidget"
         options:
             class_name: "systray"
-            label_collapsed: "\uf0da"
-            label_expanded: "\uf0d9"
+            label_collapsed: "\uf138"
+            label_expanded: "\uf137"
             label_position: "right"
             icon_size: 16
             pin_click_modifier: "alt"
@@ -220,6 +223,7 @@ widgets:
             controls_only: false
             controls_left: false
             controls_hide: true
+            thumbnail_alpha: 90
             thumbnail_edge_fade: true
             thumbnail_padding: 32
             scrolling_label:
@@ -239,7 +243,7 @@ widgets:
                 offset_top: 6
                 offset_left: 0
                 thumbnail_corner_radius: 4
-                thumbnail_size: 80
+                thumbnail_size: 100
                 max_title_size: 60
                 max_artist_size: 20
                 show_source: true
@@ -309,6 +313,28 @@ widgets:
                 bluetooth_connected: "\udb80\udcb1"
             callbacks:
                 on_right: "exec cmd.exe /c start ms-settings:bluetooth"
+    # traffic:
+    #     type: "yasb.traffic.TrafficWidget"
+    #     options:
+    #         label: "\uf103 {download_speed} | \uf102 {upload_speed}"
+    #         label_alt: "Download {download_speed} | Upload {upload_speed}"
+    #         update_interval: 1000
+    #         menu:
+    #             blur: true
+    #             round_corners: true
+    #             round_corners_type: "normal"
+    #             border_color: "system"
+    #             alignment: "left"
+    #             direction: "down"
+    #             offset_top: 6
+    #             offset_left: 0
+    #         callbacks:
+    #             on_left: "toggle_menu"
+    #             on_right: "toggle_label"
+    #         label_shadow:
+    #             enabled: true
+    #             radius: 3
+    #             offset: [1, 1]
     timeWeather_grouper:
         type: "yasb.grouper.GrouperWidget"
         options:
@@ -319,6 +345,16 @@ widgets:
                 left: 2
                 bottom: 0
                 right: 6
+    # traffic_grouper:
+    #     type: "yasb.grouper.GrouperWidget"
+    #     options:
+    #         class_name: "grouped-widgets"
+    #         widgets: ["traffic"]
+    #         container_padding:
+    #             top: 0
+    #             left: 2
+    #             bottom: 0
+    #             right: 6
     tools_grouper:
         type: "yasb.grouper.GrouperWidget"
         options:
@@ -330,4 +366,3 @@ widgets:
                 left: 2
                 bottom: 0
                 right: 6
-

@@ -5,18 +5,18 @@
 	--surface1: rgb(15, 15, 26);
 	--text: rgb(199, 200, 255);
 
-	--yellow: #cca715;
-	--orange: #D96F32;
+	--yellow: rgb(249, 226, 150);
+	--orange: #d96f32;
 	--red: rgb(244, 113, 150);
 	--green: rgb(178, 231, 173);
-    --cyan: #67e8f9;
-    --lime: #a3e635;
+	--cyan: #67e8f9;
+	--lime: #a3e635;
 
 	--primary-100: rgb(237, 233, 255);
 	--primary-200: rgb(219, 210, 255);
 	--primary-300: rgb(200, 188, 255);
 	--primary-400: rgb(182, 165, 255);
-	--primary-500: #a48fff;
+	--primary-500: rgb(164, 143, 255);
 	--primary-600: rgb(131, 114, 204);
 	--primary-700: rgb(98, 86, 153);
 	--primary-800: rgb(66, 57, 102);
@@ -26,10 +26,10 @@
 	--secondary-200: #abaabb;
 	--secondary-300: #818099;
 	--secondary-400: #575577;
-	--secondary-500: #2d2b55;
-	--secondary-600: #242244;
-	--secondary-700: #1b1a33;
-	--secondary-800: #121122;
+	--secondary-500: rgb(45, 43, 85);
+	--secondary-600: rgb(36, 34, 68);
+	--secondary-700: rgb(27, 26, 51);
+	--secondary-800: rgba(18, 17, 34, 0.5);
 	--secondary-900: #090911;
 
 	--primary-foreground: rgb(15, 15, 26);
@@ -235,7 +235,7 @@
 }
 
 .calendar .holiday-label {
-	color: var(--red);
+	color: var(--orange);
 	font-weight: 700;
 }
 
@@ -415,8 +415,8 @@
 	font-family: "Segoe UI";
 	color: var(--text);
 	font-weight: 600;
-    width: fit-content;
-    overflow: hidden;
+	width: fit-content;
+	overflow: hidden;
 }
 
 .home-menu .menu-item:hover {
@@ -431,13 +431,12 @@
 
 .notification-widget .icon.new-notification {
 	color: var(--yellow);
-    font-size: 14px;
+	font-size: 14px;
 }
 
 /*******************************************
 *                Bluetooth                 *
 *******************************************/
-
 
 .bluetooth-widget .label {
 	color: var(--cyan);
@@ -446,4 +445,313 @@
 .bluetooth-widget .icon {
 	color: var(--cyan);
 	font-size: 16px;
+}
+
+/*******************************************
+*           Network/Traffic                *
+*******************************************/
+.traffic-widget .label {
+	color: var(--primary-200);
+	font-weight: 900;
+}
+
+.traffic-menu {
+	background-color: var(--secondary-800);
+	min-width: 280px;
+}
+.traffic-menu .header {
+	border-bottom: 1px solid var(--base-1);
+	background-color: var(--secondary-700);
+}
+.traffic-menu .header .title {
+	padding: 8px;
+	font-size: 16px;
+	font-weight: 800;
+	font-family: "Segoe UI";
+	color: var(--primary-200);
+}
+.traffic-menu .header .reset-button {
+	font-size: 11px;
+	padding: 4px 8px;
+	margin-right: 8px;
+	font-family: "Segoe UI";
+	border-radius: 4px;
+	font-weight: 600;
+	background-color: transparent;
+	border: none;
+}
+.traffic-menu .reset-button:hover {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .reset-button:pressed {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Speed column styles */
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+	background-color: transparent;
+	padding: 4px 10px;
+	margin-right: 12px;
+	margin-left: 12px;
+	margin-top: 16px;
+	margin-bottom: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.traffic-menu .download-speed {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+.traffic-menu .speed-separator {
+	max-width: 1px;
+	background-color: rgba(255, 255, 255, 0.2);
+	margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+	font-size: 24px;
+	font-weight: 900;
+	font-family: "Segoe UI";
+	color: #bcc2c5;
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+	font-size: 13px;
+	font-family: "Segoe UI";
+	font-weight: 600;
+	padding-top: 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+	color: #747474;
+	font-size: 11px;
+	font-family: "Segoe UI";
+	padding: 0 0 4px 0;
+}
+
+/* Section and data styles */
+.traffic-menu .section-title {
+	font-size: 12px;
+	font-weight: 600;
+	color: #7c8192;
+	margin-bottom: 4px;
+	font-family: "Segoe UI";
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+	margin: 8px 8px 0 8px;
+	padding: 0 10px 10px 10px;
+	background-color: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .data-text {
+	font-size: 13px;
+	color: #afb5cc;
+	padding: 2px 0;
+	font-family: "Segoe UI";
+}
+.traffic-menu .data-value {
+	font-weight: 600;
+	font-size: 13px;
+	font-family: "Segoe UI";
+	padding: 2px 0;
+}
+
+/* Interface and Internet info styles */
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+	font-size: 12px;
+	color: #6f7486;
+	padding: 8px 0;
+	font-family: "Segoe UI";
+}
+.traffic-menu .internet-info {
+	background-color: rgba(68, 68, 68, 0.1);
+}
+.traffic-menu .internet-info.connected {
+	background-color: rgba(166, 227, 161, 0.096);
+	color: var(--green);
+}
+.traffic-menu .internet-info.disconnected {
+	background-color: rgba(243, 139, 168, 0.1);
+	color: #f38ba8;
+}
+
+/*******************************************
+*               Media Player               *
+*******************************************/
+.media-menu {
+	min-width: 400px;
+	max-width: 450px;
+	background-color: var(--secondary-800);
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+	font-size: 14px;
+	font-weight: 600;
+	margin-left: 10px;
+	color: var(--primary-200);
+}
+
+.media-menu .title {
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.media-menu .artist {
+	font-size: 13px;
+	color: var(--primary-500);
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+.media-menu .source {
+	font-size: 11px;
+	color: #000;
+	font-weight: normal;
+	border-radius: 3px;
+	background-color: #bac2de;
+	padding: 2px 4px;
+}
+
+.media-menu .source.firefox {
+	background-color: #ff583b;
+	color: #ffffff;
+}
+
+.media-menu .source.spotify {
+	background-color: #199143;
+	color: #ffffff;
+}
+
+.media-menu .source.edge {
+	background-color: #0078d4;
+	color: #ffffff;
+}
+
+.media-menu .source.windows-media {
+	background-color: #0078d4;
+	color: #ffffff;
+}
+
+.media-menu .btn {
+	font-family: "Segoe Fluent Icons";
+	font-size: 14px;
+	font-weight: 400;
+	margin: 10px 2px 0px 2px;
+	min-width: 40px;
+	max-width: 40px;
+	min-height: 40px;
+	max-height: 40px;
+	border-radius: 20px;
+	color: var(--primary-400);
+}
+
+.media-menu .btn.prev {
+	margin-left: 10px;
+}
+
+.media-menu .btn:hover {
+	color: white;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.media-menu .btn.play {
+	background-color: rgba(164, 143, 255, 0.1);
+	font-size: 20px;
+}
+
+.media-menu .btn.disabled:hover,
+.media-menu .btn.disabled {
+	color: #4e525c;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.media-menu .playback-time {
+	font-size: 13px;
+	font-family: "Segoe UI";
+	color: #7f849c;
+	margin-top: 15px;
+	min-width: 100px;
+}
+
+.media-menu .progress-slider {
+	height: 20px;
+	margin: 0 4px 5px 4px;
+	border-radius: 3px;
+}
+
+/*******************************************
+*               Weather                    *
+*******************************************/
+
+.weather-widget .icon {
+	font-size: 16px;
+	color: var(--yellow);
+}
+
+.weather-widget .label {
+	font-size: 12.5px;
+	color: var(--yellow);
+}
+
+.weather-card {
+	background-color: var(--secondary-800);
+}
+
+.weather-card-today .label {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--primary-200);
+}
+
+.weather-card-today .label.location {
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.weather-card-today .label.alert {
+	font-size: 13px;
+	font-weight: 600;
+	background-color: rgba(247, 175, 42, 0.05);
+	border: 1px solid rgba(247, 209, 42, 0.1);
+	color: rgba(196, 181, 162, 0.85);
+	border-radius: 6px;
+	padding: 5px 0;
+}
+
+.weather-card-day {
+	border-radius: 6px;
+	background-color: var(--secondary-700);
+}
+
+.weather-card-day .label {
+	font-size: 13px;
+}
+
+.weather-card-day.active {
+	background-color: var(--secondary-600);
+	border: 1px solid rgba(50, 50, 75, 1);
+}
+
+.weather-card-day:hover {
+	background-color: rgba(27, 26, 51, 0.6);
+}
+
+.weather-card .hourly-container {
+	border: none;
+	background-color: var(--secondary-800);
+	min-height: 150px;
+}
+
+.weather-card .hourly-data {
+	background-color: #fae93f;
+	font-size: 11px;
+	font-weight: bold;
 }
